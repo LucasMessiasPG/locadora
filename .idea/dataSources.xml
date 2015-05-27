@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3161772975">
+    <data-source source="LOCAL" name="PostgreSQL - locadora@localhost" uuid="049321ed-3282-4b18-b0f6-f0b0e8c94f5a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/locadora</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
