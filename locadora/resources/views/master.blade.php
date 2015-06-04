@@ -34,6 +34,12 @@
         @endforeach
     </script>
 @endif
+
+@if(\Session::has('message'))
+    <script>
+        Materialize.toast("{{\Session::get('message')}}", 4000)
+    </script>
+@endif
 <!-- Scripts -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>

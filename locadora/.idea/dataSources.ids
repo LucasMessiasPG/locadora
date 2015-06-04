@@ -2499,7 +2499,6 @@
       <column name="placa" sqlType="varchar" precision="8" scale="0" nullable="false" jdbcType="12"/>
       <column name="ano_fabricacao" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="ano_modelo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="palca" sqlType="numeric" precision="8" scale="2" nullable="false" jdbcType="2"/>
       <primary-key name="veiculo_pkey" columns="id_veiculo"/>
     </table>
     <table name="veiculo_id_veiculo_seq" schema="public" catalog="locadora" type="SEQUENCE">

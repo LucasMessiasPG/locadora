@@ -1,6 +1,7 @@
 @extends('master')
 @section('conteudo')
     @include('navbar')
+    <br/>
     <div class="container">
         <a class="btn grey wave-effect" href="{{ route('painel.index') }}">Voltar</a>
         {!! Form::open(['route' => 'veiculo.store']) !!}
@@ -8,13 +9,13 @@
             <!-- Form modelo Input -->
             <div class='form-group'>
                 {!! Form::label('modelo','Modelo:') !!}
-                {!! Form::select('modelo', [],null, ['class' => 'browser-default']) !!}
+                {!! Form::select('modelo', $modelos,null, ['class' => 'browser-default']) !!}
             </div>
 
             <!-- Form cor Input -->
             <div class='form-group'>
                 {!! Form::label('cor','Cor:') !!}
-                {!! Form::select('cor', [],null, ['class' => 'browser-default']) !!}
+                {!! Form::select('cor', $cores,null, ['class' => 'browser-default']) !!}
             </div>
 
             <!-- Form placa Input -->
@@ -41,5 +42,7 @@
             </div>
 
         {!! Form::close() !!}
+        <p><a class="" href="{{ route('veiculo.createModelo') }}">Cadastrar Modelo</a></p>
+        <p><a class="" href="{{ route('veiculo.createCor') }}">Cadastrar Cor</a></p>
     </div>
 @stop

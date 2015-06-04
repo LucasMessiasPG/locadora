@@ -1,7 +1,9 @@
 @extends('master')
 @section('conteudo')
 @include('navbar')
+<br/>
 <div class="container">
+    <a class="btn grey wave-effect" href="{{ route('painel.index') }}">Voltar</a>
     <div class='container'>
     {!! Form::model($user,['route' => 'painel.update']) !!}
 

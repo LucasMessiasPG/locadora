@@ -28,5 +28,11 @@ Route::group(['prefix' => 'painel','middleware' => 'App\Http\Middleware\UsuarioM
     Route::get('listar/veiculo', ['as' => 'veiculo.listar', 'uses' => 'VeiculoController@index']);
     Route::get('cadastrar/veiculo', ['as' => 'veiculo.create', 'uses' => 'VeiculoController@create']);
     Route::post('cadastrar/veiculo', ['as' => 'veiculo.store', 'uses' => 'VeiculoController@store']);
+    Route::get('cadastrar/marca', ['as' => 'veiculo.createMarca', 'uses' => 'VeiculoController@createMarca']);
+    Route::post('cadastrar/marca', ['as' => 'veiculo.storeMarca', 'uses' => 'VeiculoController@storeMarca']);
+    Route::get('cadastrar/modelo', ['as' => 'veiculo.createModelo', 'uses' => 'VeiculoController@createModelo']);
+    Route::post('cadastrar/modelo', ['as' => 'veiculo.storeModelo', 'uses' => 'VeiculoController@storeModelo']);
+    Route::get('cadastrar/cor', ['as' => 'veiculo.createCor', 'uses' => 'VeiculoController@createCor']);
+    Route::post('cadastrar/cor', ['as' => 'veiculo.storeCor', 'uses' => 'VeiculoController@storeCor']);
 });
 
