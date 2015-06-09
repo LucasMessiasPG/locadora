@@ -22,10 +22,13 @@ Route::post('registrar', ['as' => 'registrar', 'uses' => 'IndexController@regist
 Route::group(['prefix' => 'painel','middleware' => 'App\Http\Middleware\UsuarioMiddleware'], function () {
 
     Route::get('/', ['as' => 'painel.index', 'uses' => 'HomeController@index']);
-    Route::get('editar', ['as' => 'painel.edit', 'uses' => 'HomeController@edit']);
+    Route::get('editar/{id_usuario?}', ['as' => 'painel.edit', 'uses' => 'HomeController@edit']);
     Route::post('editar/update', ['as' => 'painel.update', 'uses' => 'HomeController@update']);
 
-    Route::get('listar/veiculo', ['as' => 'veiculo.listar', 'uses' => 'VeiculoController@index']);
+    /**
+     * Rotas para telas de veículo
+     */
+    Route::get('veiculo/listar', ['as' => 'veiculo.listar', 'uses' => 'VeiculoController@index']);
     Route::get('cadastrar/veiculo', ['as' => 'veiculo.create', 'uses' => 'VeiculoController@create']);
     Route::post('cadastrar/veiculo', ['as' => 'veiculo.store', 'uses' => 'VeiculoController@store']);
     Route::get('cadastrar/marca', ['as' => 'veiculo.createMarca', 'uses' => 'VeiculoController@createMarca']);
@@ -34,5 +37,15 @@ Route::group(['prefix' => 'painel','middleware' => 'App\Http\Middleware\UsuarioM
     Route::post('cadastrar/modelo', ['as' => 'veiculo.storeModelo', 'uses' => 'VeiculoController@storeModelo']);
     Route::get('cadastrar/cor', ['as' => 'veiculo.createCor', 'uses' => 'VeiculoController@createCor']);
     Route::post('cadastrar/cor', ['as' => 'veiculo.storeCor', 'uses' => 'VeiculoController@storeCor']);
-});
 
+    /**
+     * Rotas para telas de funcionario
+     */
+    Route::get('funcionario/listar', ['as' => 'funcionario.listar', 'uses' => 'FuncionarioController@listar']);
+    Route::get('funcionario/cadastrar', ['as' => 'funcionario.cadastrar', 'uses' => 'FuncionarioController@cadastrar']);
+
+    Route::post('funcionario/cadastrar', ['as' => 'funcionario.cadastar', 'uses' => 'IndexController@registrarAcao']);
+
+    Route::get('funcionario/editar/{id_usuario}', ['as' => 'funcionario.editar', 'uses' => 'FuncionarioController@editar']);
+    Route::get('funcionario/remover/{id_usuario}', ['as' => 'funcionario.demitir', 'uses' => 'FuncionarioController@destroy']);
+});

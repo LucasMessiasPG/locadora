@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UpdateRequest;
 use App\Models\Usuario;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller {
 
@@ -12,9 +13,16 @@ class HomeController extends Controller {
 		return view('home.index');
 	}
 
-    public function edit()
+    public function edit($id_usuario = false)
     {
-        $user = Usuario::find(\Auth::user()->id_usuario);
+        if(!$id_usuario)
+            $user = Usuario::find(\Auth::user()->id_usuario);
+        else
+            $user = Usuario::find($id_usuario);
+
+        if(!$user)
+            return redirect()->route('painel.index')->withErrors('Este usuário não existe!');
+
         return view('home.edit',compact('user'));
     }
 

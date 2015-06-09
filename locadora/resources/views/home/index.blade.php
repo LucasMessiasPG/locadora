@@ -21,9 +21,8 @@
                         <li>
                             <div>Funcionário</div>
                             <ul>
-                                <li><a href="#">Cadastrar Funcionário</a></li>
-                                <li><a href="#">Listar Funcionário</a></li>
-                                <li><a href="#">Promover Funcionário</a></li>
+                                <li><a href="{{ route('funcionario.cadastrar') }}">Cadastrar Funcionário</a></li>
+                                <li><a href="{{ route('funcionario.listar') }}">Listar Funcionário</a></li>
                             </ul>
                         </li>
                         <li>
